@@ -1,0 +1,23 @@
+{
+  "name": "profilegenerator2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/michaelhill4/ProfileGenerator2.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/michaelhill4/ProfileGenerator2/issues"
+  },
+  "homepage": "https://github.com/michaelhill4/ProfileGenerator2#readme",
+  "dependencies": {
+    "inquirer": "^8.2.4"
+  }
+}
