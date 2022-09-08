@@ -3,8 +3,13 @@ class Employee {
         this.name = name
         this.id = id
         this.email = email
+        this.title = title
+    }
+
+    getName() {
+        return this.name
+    
     }
 }
 
-const test = newEmployee("Mike", "29", "420@gmail.com", "CEO")
-console.log(test);
+module.exports = Employee
