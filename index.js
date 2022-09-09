@@ -1,10 +1,10 @@
 const inquirer = require("inquirer")
 
 const fs = require('fs')
-const Employee = require("./classes/Employee.js")
-const Engineer = require("./classes/Engineer.js")
-const Intern = require("./classes/Intern.js")
-const Manager = require("./classes/Manager.js")
+const Employee = require("./lib/Employee.js")
+const Engineer = require("./lib/Engineer.js")
+const Intern = require("./lib/Intern.js")
+const Manager = require("./lib/Manager.js")
 
 const employeeBucket = []
 
@@ -152,8 +152,8 @@ for (let i = 0; i < employeeBucket.length; i++) {
     <p>Name: ${employeeBucket[i].name}</p>
     <ul>
     <li>ID: ${employeeBucket[i].id}</li>
-    <li>Office Number: </li>
-    <li>Email</li>
+    <li>Office Number: ${employeeBucket.[i].managerOfficeNum}</li>
+    <li>Email: ${employeeBucket[i].email}</li>
 </ul>
 </card>`)
 }
@@ -175,7 +175,7 @@ for (let i = 0; i < employeeBucket.length; i++) {
 function generateHtml() {
     console.log(employeeBucket)
 
-    fs.writeFile("./path/index.html", returnHtml(), (err) =>
+    fs.writeFile("./src/index.html", returnHtml(), (err) =>
     // pass a string thru the data array?
     err ? console.log(err) : console.log('Successfully created index.html!'))
 }
