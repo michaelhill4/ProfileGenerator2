@@ -1,5 +1,6 @@
 const inquirer = require("inquirer")
 
+const fs = require('fs')
 const Employee = require("./classes/Employee.js")
 const Engineer = require("./classes/Engineer.js")
 const Intern = require("./classes/Intern.js")
@@ -18,7 +19,7 @@ const init = () => {
         },
         {
             type: "input",
-            message: "Please enter ID",
+            message: "Please enter manager ID",
             name: "managerId"
 
         },
@@ -38,11 +39,12 @@ const init = () => {
         const { managerName, managerId, managerEmail, managerOfficeNum } = managerData
         const manager = new Manager(managerName, managerId, managerEmail, managerOfficeNum)
         employeeBucket.push(manager)
-        anotherEmployee(manager)
+        anotherEmployee();
         
     })
 }
-const anotherEmployee = () => {
+//  
+  function anotherEmployee ()  {
     
     return inquirer.prompt([
         {
@@ -51,6 +53,7 @@ const anotherEmployee = () => {
             choices: [
                 "Engineer",
                 "Intern",
+                "No new Employees"
             ],
             name: "employeeAdd",
 
@@ -63,6 +66,8 @@ const anotherEmployee = () => {
             case "Intern":
                 addIntern()
                 break;
+                case "No new Employees":
+                generateHtml()
 
             }
         })
@@ -95,6 +100,7 @@ const anotherEmployee = () => {
                 
             },
         ]).then((engineerData) => {
+            // takes in answers to engineer questions to creata a data variable
         const { engineerName, engineerId, engineerEmail, engineerGit } = engineerData
         const engineer = new Engineer(engineerName, engineerId, engineerEmail, engineerGit)
         employeeBucket.push(engineer)
@@ -133,6 +139,47 @@ const addIntern = () => {
         const intern = new Intern(nameOfIntern, internId, internEmail, internSchool)
         employeeBucket.push(intern)
         anotherEmployee(intern)
-        
+        // console.log(employeeBucket)
     })
 }
+
+function returnHtml() {
+
+
+    var htmlElements = []
+for (let i = 0; i < employeeBucket.length; i++) {
+    htmlElements.push(`<card>
+    <p>Name: ${employeeBucket[i].name}</p>
+    <ul>
+    <li>ID: ${employeeBucket[i].id}</li>
+    <li>Office Number: </li>
+    <li>Email</li>
+</ul>
+</card>`)
+}
+
+    return `<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        ${htmlElements}
+    </body>
+    </html>`
+}
+
+function generateHtml() {
+    console.log(employeeBucket)
+
+    fs.writeFile("./path/index.html", returnHtml(), (err) =>
+    // pass a string thru the data array?
+    err ? console.log(err) : console.log('Successfully created index.html!'))
+}
+
+init();
+// i have all the info i need now i just need to generate an html
+
