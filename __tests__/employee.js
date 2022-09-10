@@ -12,7 +12,7 @@ describe('Get Name', () => {
 });
 
 describe('Get ID', () => {
-    it("should display data from entries", () => {
+    it("should show data from entries", () => {
 
       const text = 1;
       const obj = new Employee(text, 51);
@@ -22,7 +22,7 @@ describe('Get ID', () => {
 });
 
 describe('Get email', () => {
-    it("should display data from entries", () => {
+    it("should show data from entries", () => {
 
       const text = "michelangelo@tmnt.com";
       const obj = new Employee(text, 5, "michelangelo@tmnt.com");
@@ -31,7 +31,7 @@ describe('Get email', () => {
        
 });
 describe('Get ID', () => {
-    it("should display data from entries", () => {
+    it("should show data from entries", () => {
 
       const text = "title";
       const obj = new Employee(text, 5, "michelangelo@tmnt.com", "title");

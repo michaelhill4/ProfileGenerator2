@@ -152,7 +152,7 @@ for (let i = 0; i < employeeBucket.length; i++) {
     <p>Name: ${employeeBucket[i].name}</p>
     <ul>
     <li>ID: ${employeeBucket[i].id}</li>
-    <li>Office Number: ${employeeBucket.[i].managerOfficeNum}</li>
+    <li>Office Number: ${employeeBucket[i].managerOfficeNum}</li>
     <li>Email: ${employeeBucket[i].email}</li>
 </ul>
 </card>`)
