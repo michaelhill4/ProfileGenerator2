@@ -15,7 +15,7 @@ describe('Get ID', () => {
     it("should show data from entries", () => {
 
       const text = 1;
-      const obj = new Employee(text, 51);
+      const obj = new Employee(text, 1);
       expect(obj.id).toEqual(text);
     })
        

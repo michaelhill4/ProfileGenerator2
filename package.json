@@ -19,5 +19,8 @@
   "homepage": "https://github.com/michaelhill4/ProfileGenerator2#readme",
   "dependencies": {
     "inquirer": "^8.2.4"
+  },
+  "devDependencies": {
+    "jest": "^29.0.3"
   }
 }
