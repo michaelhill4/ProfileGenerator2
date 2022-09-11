@@ -13,7 +13,7 @@ Michael Hill
 [MIT](https://choosealicense.com/licenses/mit/)
 
 
-## Running Tests
+## Running 
 
 To run tests, run the following command
 
